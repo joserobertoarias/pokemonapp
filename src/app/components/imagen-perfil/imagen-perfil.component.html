@@ -1,0 +1,47 @@
+<div class="cajaImagenPerfil">
+    <div class="tituloCajaImagenPerfil">
+        <span class="txtImagenPerfil">Imagen Perfil</span> 
+    </div>
+    <div class="fotoCajaImagenPerfil">
+        <div class="divFoto">
+            <img id="fotoPerfil" *ngIf="imagenBase64"  [src]="imagenBase64">
+            <img id="fotoPerfil" *ngIf="urlImagenActual" [src]="urlImagenActual">
+        </div>        
+    </div>
+    <div class="archivoFotoCajaImagenPerfil" *ngIf="!usuarioRegistrado">
+        <table id="tblFilePerfil">
+            <tr *ngIf="imagenBase64">
+                <td><span class="textImgFile">imagen_002.jpg</span></td>
+                <td><span class="trashfile" (click)="removeImage()"><i class="fa-solid fa-trash-can"></i></span></td>
+            </tr>
+            <tr *ngIf="!imagenBase64">
+                <td colspan="2">
+
+                    <div style="padding-top: 5px;text-align: center;">
+                        <button type="button" (click)="fileInput.click()">
+                            <i class="fa-solid fa-upload"></i> Seleccionar imagen
+                        </button>
+
+                        <input type="file" hidden #fileInput (change)="seleccionarImagen($event)">
+                    </div>            
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="divInfoPerfil" *ngIf="usuarioRegistrado">
+        <table>
+            <tr>
+                <td>Pasatiempo</td>
+                <td>{{usuarioRegistrado.pasatiempo[0]}}</td>    
+            </tr>
+            <tr>
+                <td>Edad</td>
+                <td>{{usuarioRegistrado.edad}}</td>    
+            </tr>
+            <tr>
+                <td>DUI</td>
+                <td>{{usuarioRegistrado.documento}}</td>    
+            </tr>
+        </table>
+    </div>
+</div>

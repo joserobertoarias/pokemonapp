@@ -1,0 +1,24 @@
+
+<div class="box">
+    <div class="msgPerfil">
+        <div class="msgTitulo1">Hola {{usuario.nombre}}</div>
+    </div>
+    <form>
+        <div class="cajaPerfil">
+            <div class="imgPerfil">
+                <app-imagen-perfil [usuarioRegistrado]="usuario"  (archivoSeleccionado)="archivoSeleccionado($event)"></app-imagen-perfil>
+            </div>
+            <div class="infoPerfil">
+                <div>          
+                    <div>
+                        <h2>Mis Pokémon</h2>
+                    </div>
+                </div>
+                <div class="pokelistado">
+                    <app-mi-poke-card  *ngFor="let pokemon of pokemonsSelected;" [pokemon]="pokemon"></app-mi-poke-card>
+                </div>
+ 
+            </div>   
+        </div>  
+    </form> 
+</div>

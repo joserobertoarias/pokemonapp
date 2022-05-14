@@ -1,0 +1,10 @@
+<div class="pokeBox" (click)="selectPokemon()" [ngClass]="{'pokeBoxSelected': pokemon.selected}">
+    <div class="pokeImg">
+        <img [src]="pokemon.data.sprites.other.home.front_default" alt="Bulbasaur" width="92">
+    </div>
+    <div class="pokeTitle">
+        <div class="pokeName">
+            <span>{{formatIndice(indice)}}</span><span style="padding-left: 10px;">{{pokemon.data.name}}</span>
+        </div>
+    </div>
+</div>

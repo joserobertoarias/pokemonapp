@@ -1,0 +1,58 @@
+.pokeBox {
+    /*border: 1px solid grey; */
+    height: 200px; 
+    width: 450px; 
+    border-radius: 15px; 
+    background-color: #F2F2F2;
+    display: flex; 
+    flex-direction: row; 
+    align-items: center; 
+    padding: 5px; 
+    margin-bottom: 15px;
+}
+
+.lefSide {
+    /*border:1px solid black; */
+    width: 40%; 
+    height: 95%;
+}
+
+.pokeimg {
+    /*border: 1px solid green; */
+    height: 70%; 
+    display: flex; 
+    justify-content: center;
+}
+
+.pokename {
+    /*border: 1px solid green; */
+    height: 28%; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+}
+
+.titulo1 {
+    font-size: 18px; 
+    font-weight: bold; 
+    text-align: center;
+}
+
+.titulo2 {
+    font-size: 11px; 
+    text-align: center;
+}
+
+.righSide {
+    font-size: 13px; 
+    /*border:1px solid black; */
+    width: 60%; height: 95%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+#tbl {
+    /*border: 1px solid green;*/
+    height: 170px; 
+}

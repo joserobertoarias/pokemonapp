@@ -1,0 +1,51 @@
+<div class="pokeBox">
+    <div class="lefSide">
+        <div class="pokeimg">
+            <img [src]="pokemon.data.sprites.other.home.front_default" alt="Bulbasaur" width="122">
+        </div>
+        <div class="pokename">
+            <span class="titulo1">{{pokemon.data.name}}</span>
+            <span class="titulo2">Planta/Veneno</span>
+        </div>
+    </div>
+    <div class="righSide">
+        <table id="tbl">
+            <tr>
+                <td style="width: 120px;">HP</td>
+                <td style="width: 120px;">
+                    <mat-progress-bar mode="determinate" [value]="pokemon.data.stats[0].base_stat"></mat-progress-bar>
+                </td>
+            </tr>
+            <tr>
+                <td>Ataque</td>
+                <td>
+                    <mat-progress-bar mode="determinate" [value]="pokemon.data.stats[1].base_stat"></mat-progress-bar>
+                </td>
+            </tr>
+            <tr>
+                <td>Defensa</td>
+                <td>
+                    <mat-progress-bar mode="determinate" [value]="pokemon.data.stats[2].base_stat"></mat-progress-bar>
+                </td>
+            </tr>
+            <tr>
+                <td>Atagque Especial</td>
+                <td>
+                    <mat-progress-bar mode="determinate" [value]="pokemon.data.stats[3].base_stat"></mat-progress-bar>
+                </td>
+            </tr>
+            <tr>
+                <td>Defensa Especial</td>
+                <td>
+                    <mat-progress-bar mode="determinate" [value]="pokemon.data.stats[4].base_stat"></mat-progress-bar>
+                </td>
+            </tr>
+            <tr>
+                <td>Velocidad</td>
+                <td>
+                    <mat-progress-bar mode="determinate" [value]="pokemon.data.stats[5].base_stat"></mat-progress-bar>
+                </td>
+            </tr>
+        </table>            
+    </div>
+</div>

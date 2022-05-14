@@ -1,0 +1,44 @@
+.pokeBox {
+    width:120px;
+    height:80px;
+    border:1px solid gray;
+    border-radius: 15px;
+    display: flex; 
+    flex-direction: column; 
+    background-color: ghostwhite;
+    cursor: pointer;
+}
+
+.pokeBoxSelected {
+    background-color: #FFC600;
+}
+
+.pokeImg {
+    /*border: 1px solid red;*/
+    width: 100px;
+    height: 90px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-top: -60px; 
+}
+.pokeTitle{
+    /*border: 1px solid blue;*/
+    width: 100%;height: 45px;
+    margin: auto;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+.pokeName{
+    padding: 10px;
+    font-weight: bold;
+    font-size: 10px;
+    /*border: 1px solid green;*/
+    height: 5px;display: flex;
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 10px; 
+    background-color: darkblue; 
+    color: white;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.8);
+}

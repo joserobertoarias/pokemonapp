@@ -1,0 +1,23 @@
+.loadingDiv {
+    display: flex;
+    position: relative;
+    align-content: center;
+    align-items: center;
+}
+
+img {
+    margin: auto;
+}
+
+.txtLoading {
+    display: flex;
+    position: relative;
+    align-content: center;
+    font-size: 34px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+p {
+    margin: auto;
+}
