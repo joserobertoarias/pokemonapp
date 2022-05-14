@@ -15,6 +15,19 @@ export class MiPokeCardComponent implements OnInit {
 
   ngOnInit(): void {
     
+
+    
+  }
+
+  getTitulo(pokemon):string{
+    let titulo: string = '';
+    
+    console.log(pokemon.data.types.map(function(elem){
+        titulo = elem.type.name;
+    }).join(","))
+
+    return titulo
+
   }
 
 }

@@ -19,7 +19,7 @@ export class CrearPerfilComponent implements OnInit {
   guardarPerfil(perfil: usuarioDTO):void {
   
     this.usuarioService.crear(perfil);
-     this.router.navigate(['/editar']);
+     this.router.navigate(['/seleccionar']);
 
   }
 

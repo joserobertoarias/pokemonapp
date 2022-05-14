@@ -16,6 +16,9 @@ export class PokeCardComponent implements OnInit {
   @Input()
   indice: number;
 
+  @Input()
+  estado: boolean;
+
   @Output()
   pokemonClicked: EventEmitter<Pokemon> =  new EventEmitter<Pokemon>();
 
@@ -28,6 +31,7 @@ export class PokeCardComponent implements OnInit {
      return (indice.toString()).padStart(3,'0');
   }
   selectPokemon(){
+    
     if (this.pokemon.selected){
       this.pokemon.selected = false;
     }else{

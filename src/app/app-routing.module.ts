@@ -5,12 +5,14 @@ import { LoadingPageComponent } from './components/loading-page/loading-page.com
 import { CrearPerfilComponent } from './components/crear-perfil/crear-perfil.component';
 import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.component';
 import { MisPokemonesComponent } from './components/mis-pokemones/mis-pokemones.component';
+import { RegistroPokemonsComponent } from './components/registro-pokemons/registro-pokemons.component';
 
 const routes: Routes = [
   {path: '', component: CrearPerfilComponent},
   {path: 'loading', component: LoadingPageComponent},
-  {path: 'editar', component: EditarPerfilComponent},
-  {path: 'milista', component: MisPokemonesComponent}
+  {path: 'seleccionar', component: RegistroPokemonsComponent},
+  {path: 'milista', component: MisPokemonesComponent},
+  {path: 'editar', component: EditarPerfilComponent}
 ]
 
 @NgModule({

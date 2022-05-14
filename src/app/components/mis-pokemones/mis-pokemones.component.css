@@ -9,6 +9,13 @@ button {
 .box {
     max-width: 60%;
     min-width: 700px;
+    JUSTIFY-CONTENT: start;
+    FLEX-DIRECTION: column;
+}
+
+form {
+    DISPLAY: FLEX;
+    padding-left: 50px;
 }
 
 .msgPerfil {
@@ -31,6 +38,7 @@ button {
 
 .cajaPerfil {
     display: flex;
+    column-gap: 50px;
 }
 
 .imgPerfil {
@@ -45,7 +53,6 @@ button {
 .infoPerfil {
     display: flex;
     flex-direction: column;
-    width: 50%;
     align-content: center;
     justify-content: center;
 }

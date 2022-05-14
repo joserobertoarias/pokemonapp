@@ -1,6 +1,8 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon';
 import { PokemonService } from 'src/app/services/pokemon.service';
+import { MsgAlertComponent } from '../msg-alert/msg-alert.component';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -9,6 +11,8 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class PokemonListComponent implements OnInit, OnDestroy {
 
+  
+  durationInSeconds = 5;
   pokemons: Pokemon[] = [];
 
   pokemonsSelected:  Pokemon[] = [];
@@ -16,7 +20,7 @@ export class PokemonListComponent implements OnInit, OnDestroy {
   @Output()
   pokemonsSelectedEmit: EventEmitter<Pokemon[]> =  new EventEmitter<Pokemon[]>();
 
-  constructor(private pokemonService: PokemonService) { }
+  constructor(private pokemonService: PokemonService,private _snackBar: MatSnackBar) { }
   ngOnDestroy(): void {
 
   }
@@ -35,10 +39,21 @@ export class PokemonListComponent implements OnInit, OnDestroy {
     })
   }
 
-  pokemonClicked(event){
+  
+  openSnackBar() {
+    this._snackBar.openFromComponent(MsgAlertComponent, {
+      duration: this.durationInSeconds * 1000,
+    });
+  }
 
-    if (event.selected){      
-      this.pokemonsSelected.push(event);
+  pokemonClicked(event){
+    if (event.selected){
+      if (this.pokemonsSelected.length < 3){        
+        this.pokemonsSelected.push(event);
+      } else{
+        event.selected = false;
+        this.openSnackBar();
+      }     
     }else{
       const index = this.pokemonsSelected.indexOf(event, 0)
       if (index > -1){

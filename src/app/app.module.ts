@@ -21,6 +21,7 @@ import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.
 import { PokeCardComponent } from './components/poke-card/poke-card.component';
 import { MisPokemonesComponent } from './components/mis-pokemones/mis-pokemones.component';
 import { MiPokeCardComponent } from './components/mi-poke-card/mi-poke-card.component';
+import { MsgAlertComponent } from './components/msg-alert/msg-alert.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MiPokeCardComponent } from './components/mi-poke-card/mi-poke-card.comp
     EditarPerfilComponent,
     PokeCardComponent,
     MisPokemonesComponent,
-    MiPokeCardComponent
+    MiPokeCardComponent,
+    MsgAlertComponent,
   ],
   imports: [
     BrowserModule,

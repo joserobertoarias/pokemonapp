@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Pokemon } from 'src/app/models/pokemon';
 import { usuarioDTO } from 'src/app/models/usuario_perfil';
 import { UsuarioService } from 'src/app/services/usuario.service';
@@ -14,7 +15,7 @@ export class MisPokemonesComponent implements OnInit {
   usuario: usuarioDTO;
   pokemonsSelected: Pokemon[] = [];
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -39,6 +40,10 @@ export class MisPokemonesComponent implements OnInit {
 
   archivoSeleccionado(file){
 
+  }
+
+  goToEdiarPerfil(){
+    this.router.navigate([('/editar')]);
   }
 
 
