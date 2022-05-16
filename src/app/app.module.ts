@@ -22,6 +22,7 @@ import { PokeCardComponent } from './components/poke-card/poke-card.component';
 import { MisPokemonesComponent } from './components/mis-pokemones/mis-pokemones.component';
 import { MiPokeCardComponent } from './components/mi-poke-card/mi-poke-card.component';
 import { MsgAlertComponent } from './components/msg-alert/msg-alert.component';
+import { SearchFilterPipe } from './search-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { MsgAlertComponent } from './components/msg-alert/msg-alert.component';
     MisPokemonesComponent,
     MiPokeCardComponent,
     MsgAlertComponent,
+    SearchFilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import { MsgAlertComponent } from './components/msg-alert/msg-alert.component';
     ReactiveFormsModule,
     NgxMaskModule.forRoot(),
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

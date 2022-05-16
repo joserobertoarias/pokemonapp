@@ -7,7 +7,7 @@
     <form (submit)="Guardar()" [formGroup]="form">
         <div class="cajaPerfil">
             <div class="imgPerfil">
-                <app-imagen-perfil (archivoSeleccionado)="archivoSeleccionado($event)"></app-imagen-perfil>
+                <app-imagen-perfil [usuarioRegistrado]="usuario_Perfil"  (archivoSeleccionado)="archivoSeleccionado($event)"></app-imagen-perfil>
             </div>
             <div class="infoPerfil">
                 <div>          

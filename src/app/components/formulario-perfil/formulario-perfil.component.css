@@ -12,6 +12,13 @@ button {
 .box {
     max-width: 60%;
     min-width: 700px;
+    JUSTIFY-CONTENT: start;
+    FLEX-DIRECTION: column;
+}
+
+form {
+    DISPLAY: FLEX;
+    padding-left: 50px;
 }
 
 .msgPerfil {

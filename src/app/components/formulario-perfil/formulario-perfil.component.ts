@@ -50,6 +50,7 @@ export class FormularioPerfilComponent implements OnInit {
   form: FormGroup;
 
   ngOnInit(): void {
+
     this.filteredhobies = this.hobieCtrl.valueChanges.pipe(
       startWith(null),
       map((hobie: string | null) => (hobie ? this._filter(hobie) : this.allhobies.slice())),
@@ -67,6 +68,9 @@ export class FormularioPerfilComponent implements OnInit {
 
     if (this.usuario_Perfil != undefined){
       this.form.patchValue(this.usuario_Perfil);
+      this.usuario_Perfil.pasatiempo.forEach((valor: string)=> {
+        this.hobies.push(valor);
+      });
     }
 
   }

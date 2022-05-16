@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Pokemon } from 'src/app/models/pokemon';
 import { usuarioDTO } from 'src/app/models/usuario_perfil';
+import { PokemonService } from 'src/app/services/pokemon.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 
@@ -14,14 +15,15 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class RegistroPokemonsComponent implements OnInit {
 
-
+  pokemons: Pokemon[] = [];
   imagenBase64: string;
   usuario: usuarioDTO;
   pokemonsSelected: Pokemon[] = [];
   avisoMasde3: string = 'El limite de pokemon en tu equipo son 3!';
   mostrarAviso: boolean = false;
+  searchTerm = '';
 
-  constructor(private router: Router, private usuarioService: UsuarioService) { }
+  constructor(private router: Router, private usuarioService: UsuarioService, private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
 
@@ -36,6 +38,17 @@ export class RegistroPokemonsComponent implements OnInit {
         this.imagenBase64 = null;
       }
     });
+
+    this.pokemonService.getPokemons().subscribe((result: any) => {
+      //this.pokemons = result.results;
+      //console.log(result.results);
+      result.results.forEach(element => {
+        this.pokemonService.getPokemonDetails(element.url).subscribe((pokemon: any) => {
+          let p = new Pokemon(pokemon, false);      
+          this.pokemons.push(p);
+        })
+      });
+    })
 
 
   }
@@ -55,7 +68,12 @@ export class RegistroPokemonsComponent implements OnInit {
     }
   }
 
-
+  search(value: string): void {
+    console.log(value)
+    this.pokemons = this.pokemons.filter((val) =>
+      val.data.name.toLowerCase().includes(value)
+    );
+  }
 
 
 

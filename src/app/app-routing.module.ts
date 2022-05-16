@@ -9,6 +9,7 @@ import { RegistroPokemonsComponent } from './components/registro-pokemons/regist
 
 const routes: Routes = [
   {path: '', component: CrearPerfilComponent},
+  {path: 'index',component: CrearPerfilComponent},
   {path: 'loading', component: LoadingPageComponent},
   {path: 'seleccionar', component: RegistroPokemonsComponent},
   {path: 'milista', component: MisPokemonesComponent},

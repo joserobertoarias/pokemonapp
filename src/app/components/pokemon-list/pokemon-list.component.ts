@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { MsgAlertComponent } from '../msg-alert/msg-alert.component';
@@ -11,8 +11,12 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class PokemonListComponent implements OnInit, OnDestroy {
 
-  
+  @Input()
+  searchTerm ;
+
   durationInSeconds = 5;
+
+  @Input()
   pokemons: Pokemon[] = [];
 
   pokemonsSelected:  Pokemon[] = [];
@@ -26,17 +30,8 @@ export class PokemonListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    
-    this.pokemonService.getPokemons().subscribe((result: any) => {
-      //this.pokemons = result.results;
-      //console.log(result.results);
-      result.results.forEach(element => {
-        this.pokemonService.getPokemonDetails(element.url).subscribe((pokemon: any) => {
-          let p = new Pokemon(pokemon, false);      
-          this.pokemons.push(p);
-        })
-      });
-    })
+    console.log(this.pokemons)
+
   }
 
   
@@ -63,5 +58,7 @@ export class PokemonListComponent implements OnInit, OnDestroy {
     this.pokemonsSelectedEmit.emit(this.pokemonsSelected);
 
   }
+
+
 
 }

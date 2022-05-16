@@ -13,8 +13,7 @@ export class UsuarioService {
 
 
   public crear(usuario: usuarioDTO){
-    localStorage.removeItem("perfil");
-    localStorage.removeItem("imagenPerfil");
+    this.removeData();
 
     toBase64(usuario.foto).then((value: string) => {
       usuario.fotoBase64 = value;
@@ -22,6 +21,14 @@ export class UsuarioService {
       this.saveData("perfil",usuario);
     })
     .catch(error => console.log(error));
+
+  }
+
+  public editar(usuario: usuarioDTO){
+    
+    localStorage.removeItem("perfil");
+
+    this.saveData("perfil",usuario);
 
   }
 
@@ -38,6 +45,7 @@ export class UsuarioService {
    removeData():void{
     localStorage.removeItem("perfil");
     localStorage.removeItem("imagenPerfil");
+    localStorage.removeItem("milista");
    }
 
    guardarMisPokemones(lista: Pokemon[]){     

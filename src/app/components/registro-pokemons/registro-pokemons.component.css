@@ -9,6 +9,13 @@ button {
 .box {
     max-width: 60%;
     min-width: 700px;
+    JUSTIFY-CONTENT: start;
+    FLEX-DIRECTION: column;
+}
+
+form {
+    DISPLAY: FLEX;
+    padding-left: 50px;
 }
 
 .msgPerfil {
@@ -45,7 +52,6 @@ button {
 .infoPerfil {
     display: flex;
     flex-direction: column;
-    width: 50%;
     align-content: center;
     justify-content: center;
 }
@@ -68,6 +74,16 @@ button {
 
 
 .pokelistado {
-    margin-top: 25px;
+    margin-top: 10px;
     max-height: 500px;
+    overflow-y: scroll;
+    padding-top: 50px;
+    padding-bottom: 20px;
 }
+
+
+.example-full-width {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }

@@ -1,4 +1,3 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -25,31 +24,29 @@ export class EditarPerfilComponent implements OnInit {
 
 
     this.usuarioService.getData("perfil").subscribe(valor => {
-      if (valor !== undefined){
+      if (valor !== null){
         if (valor.fotoBase64 !== undefined){
-          console.log(valor);
           this.imagenBase64 = valor.fotoBase64;
           this.usuario = valor;
+          console.log(valor);
+          console.log(this.usuario);
         }
       }else{
         this.imagenBase64 = null;
+        this.router.navigate(['']);
       }
     });
 
-  }
 
-  guardar(){
-    this.usuarioService.guardarMisPokemones(this.pokemonsSelected);
-    this.router.navigate(['/milista']);
-
-  }
-  archivoSeleccionado(file){
+  
 
   }
 
-  pokemonSelecteds(event){
-    this.pokemonsSelected = event;
-    console.log(event);
+  guardarPerfil(perfil: usuarioDTO):void {
+  
+    this.usuarioService.editar(perfil);
+     this.router.navigate(['/seleccionar']);
+
   }
 
 }

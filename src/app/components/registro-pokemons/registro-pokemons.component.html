@@ -15,10 +15,21 @@
                         <h2>Pokémon</h2>
                         <h5>Selecciona 3 Pokémon para que sean parte de tu equipo</h5>
                     </div>
+                    <div>
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-icon matSuffix>search</mat-icon>
+                            <input matInput class="searchTerm" 
+                            placeholder="buscar por indice, nombre"
+                            type="text" name="searchTerm" 
+                            placeholder="Filter by country name"
+                            [(ngModel)]="searchTerm"
+                            (input)="search(searchTerm)" />
+                          </mat-form-field>                
+                    </div>
                 </div>
                 <div class="pokelistado">
                     <app-msg-alert *ngIf="mostrarAviso" [clase]="'warning'" [mensaje]="avisoMasde3" ></app-msg-alert>
-                    <app-pokemon-list (pokemonsSelectedEmit)="pokemonSelecteds($event)" ></app-pokemon-list>
+                    <app-pokemon-list [searchTerm]="searchTerm" [pokemons]="pokemons"  (pokemonsSelectedEmit)="pokemonSelecteds($event)" ></app-pokemon-list>
                 </div>
                 <div class="footerPerfil">
                     <button mat-flat-button color="primary" (click)="guardar()">Guardar</button>
