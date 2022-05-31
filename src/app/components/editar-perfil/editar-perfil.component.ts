@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Pokemon } from 'src/app/models/pokemon';
 import { usuarioDTO } from 'src/app/models/usuario_perfil';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { toBase64 } from 'src/app/utilidades';
+import { DataSharingService } from 'src/app/services/data-sharing.service';
 
 @Component({
   selector: 'app-editar-perfil',
@@ -18,7 +18,7 @@ export class EditarPerfilComponent implements OnInit {
   usuario: usuarioDTO;
   pokemonsSelected: Pokemon[] = [];
 
-  constructor(private router: Router, private usuarioService: UsuarioService) { }
+  constructor(private router: Router, private usuarioService: UsuarioService, private dataSharingService:DataSharingService) { }
 
   ngOnInit(): void {
 
@@ -28,8 +28,7 @@ export class EditarPerfilComponent implements OnInit {
         if (valor.fotoBase64 !== undefined){
           this.imagenBase64 = valor.fotoBase64;
           this.usuario = valor;
-          console.log(valor);
-          console.log(this.usuario);
+          this.dataSharingService.PhotoBase64.next(valor.fotoBase64);
         }
       }else{
         this.imagenBase64 = null;

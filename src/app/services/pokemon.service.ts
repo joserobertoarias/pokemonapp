@@ -13,7 +13,7 @@ export class PokemonService {
    }
 
    getPokemons(){
-     return this.http.get(`${this.apiURL}/pokemon?limit=9`);
+     return this.http.get(`${this.apiURL}/pokemon?limit=100000&offset=0`);
    }
 
    getPokemonDetails(url: string){

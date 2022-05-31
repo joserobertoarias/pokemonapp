@@ -68,14 +68,17 @@ form {
 
 
 .footerPerfil {
-    margin-top: 25px;
     margin: auto;
+}
+
+.footerPerfil button {
+    margin-top: 25px;
 }
 
 
 .pokelistado {
     margin-top: 10px;
-    max-height: 500px;
+    max-height: 300px;
     overflow-y: scroll;
     padding-top: 50px;
     padding-bottom: 20px;

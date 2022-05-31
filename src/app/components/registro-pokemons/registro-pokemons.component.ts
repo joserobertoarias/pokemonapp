@@ -16,6 +16,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class RegistroPokemonsComponent implements OnInit {
 
   pokemons: Pokemon[] = [];
+  data: Pokemon[] = [];
   imagenBase64: string;
   usuario: usuarioDTO;
   pokemonsSelected: Pokemon[] = [];
@@ -30,7 +31,6 @@ export class RegistroPokemonsComponent implements OnInit {
     this.usuarioService.getData("perfil").subscribe(valor => {
       if (valor !== undefined){
         if (valor.fotoBase64 !== undefined){
-          console.log(valor);
           this.imagenBase64 = valor.fotoBase64;
           this.usuario = valor;
         }
@@ -45,10 +45,12 @@ export class RegistroPokemonsComponent implements OnInit {
       result.results.forEach(element => {
         this.pokemonService.getPokemonDetails(element.url).subscribe((pokemon: any) => {
           let p = new Pokemon(pokemon, false);      
-          this.pokemons.push(p);
+          this.data.push(p);
         })
       });
-    })
+    });
+
+    this.pokemons = this.data;
 
 
   }
@@ -70,8 +72,8 @@ export class RegistroPokemonsComponent implements OnInit {
 
   search(value: string): void {
     console.log(value)
-    this.pokemons = this.pokemons.filter((val) =>
-      val.data.name.toLowerCase().includes(value)
+    this.pokemons = this.data.filter(val =>
+      val.data.name.toLowerCase().indexOf(value.toLowerCase()) !== -1
     );
   }
 

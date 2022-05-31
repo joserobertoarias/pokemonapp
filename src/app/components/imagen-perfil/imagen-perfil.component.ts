@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { usuarioDTO } from 'src/app/models/usuario_perfil';
 import { toBase64 } from 'src/app/utilidades';
+import { DataSharingService } from 'src/app/services/data-sharing.service';
 
 @Component({
   selector: 'app-imagen-perfil',
@@ -12,7 +13,7 @@ export class ImagenPerfilComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor() { }
+  constructor(private dataSharingService:DataSharingService) { }
   imagenBase64: string;
 
   @Input()
@@ -30,6 +31,7 @@ export class ImagenPerfilComponent implements OnInit {
       if ((this.usuarioRegistrado?.fotoBase64 ?? '').length > 0){
         this.urlImagenActual = this.usuarioRegistrado.fotoBase64;
       }
+
 
     } catch (error) {
       
