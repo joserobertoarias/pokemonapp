@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { Pokemon } from '../models/pokemon';
 import { usuarioDTO } from '../models/usuario_perfil';
 import { getBase64Image, toBase64 } from '../utilidades';
@@ -8,6 +8,20 @@ import { getBase64Image, toBase64 } from '../utilidades';
   providedIn: 'root'
 })
 export class UsuarioService {
+
+  usr: usuarioDTO =  {
+    nombre: '',
+    pasatiempo: [],
+    cumpleanios: null,
+    documento: '',
+    foto: null,
+    fotoBase64: '',
+    edad: 0 
+  };
+
+  private usuario = new BehaviorSubject<usuarioDTO>(this.usr);
+
+  public customUsuario = this.usuario.asObservable();
 
   constructor() { }
 
@@ -19,6 +33,8 @@ export class UsuarioService {
       usuario.fotoBase64 = value;
       localStorage.setItem("imagenPerfil", value);
       this.saveData("perfil",usuario);
+      console.log(usuario);
+      this.usuario.next(usuario);
     })
     .catch(error => console.log(error));
 
@@ -34,7 +50,9 @@ export class UsuarioService {
 
 
   saveData(key:string,value:usuarioDTO){
+      
     localStorage.setItem(key,JSON.stringify(value));
+
   }
 
   getData(key:string): Observable<usuarioDTO>{

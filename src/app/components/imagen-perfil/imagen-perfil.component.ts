@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { usuarioDTO } from 'src/app/models/usuario_perfil';
 import { toBase64 } from 'src/app/utilidades';
-import { DataSharingService } from 'src/app/services/data-sharing.service';
 
 @Component({
   selector: 'app-imagen-perfil',
@@ -13,11 +12,9 @@ export class ImagenPerfilComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private dataSharingService:DataSharingService) { }
+  constructor() { }
   imagenBase64: string;
 
-  @Input()
-  urlImagenActual: string
 
   @Output()
   archivoSeleccionado: EventEmitter<File> = new EventEmitter<File>();
@@ -29,7 +26,7 @@ export class ImagenPerfilComponent implements OnInit {
     try {
 
       if ((this.usuarioRegistrado?.fotoBase64 ?? '').length > 0){
-        this.urlImagenActual = this.usuarioRegistrado.fotoBase64;
+        this.imagenBase64 = this.usuarioRegistrado.fotoBase64;
       }
 
 
@@ -49,7 +46,7 @@ export class ImagenPerfilComponent implements OnInit {
       .catch(error => console.log(error));  
       
       this.archivoSeleccionado.emit(file); 
-      this.urlImagenActual = null;
+
     }
   }
 

@@ -23,7 +23,7 @@ import { MisPokemonesComponent } from './components/mis-pokemones/mis-pokemones.
 import { MiPokeCardComponent } from './components/mi-poke-card/mi-poke-card.component';
 import { MsgAlertComponent } from './components/msg-alert/msg-alert.component';
 import { SearchFilterPipe } from './search-filter.pipe';
-import { DataSharingService } from './services/data-sharing.service';
+import { UsuarioService } from './services/usuario.service';
 
 @NgModule({
   declarations: [

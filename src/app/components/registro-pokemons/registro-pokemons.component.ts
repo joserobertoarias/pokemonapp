@@ -28,6 +28,7 @@ export class RegistroPokemonsComponent implements OnInit {
 
   ngOnInit(): void {
 
+
     this.usuarioService.getData("perfil").subscribe(valor => {
       if (valor !== undefined){
         if (valor.fotoBase64 !== undefined){
@@ -71,7 +72,6 @@ export class RegistroPokemonsComponent implements OnInit {
   }
 
   search(value: string): void {
-    console.log(value)
     this.pokemons = this.data.filter(val =>
       val.data.name.toLowerCase().indexOf(value.toLowerCase()) !== -1
     );

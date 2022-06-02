@@ -8,7 +8,6 @@ import {map, startWith} from 'rxjs/operators';
 import * as moment from 'moment';
 import { usuarioDTO } from 'src/app/models/usuario_perfil';
 import { toBase64 } from 'src/app/utilidades';
-import { DataSharingService } from 'src/app/services/data-sharing.service';
 
 @Component({
   selector: 'app-formulario-perfil',
@@ -41,7 +40,7 @@ export class FormularioPerfilComponent implements OnInit {
 
   @ViewChild('hobieInput') hobieInput: ElementRef<HTMLInputElement>;
   
-  constructor(private formBuilder: FormBuilder, private dataSharingService: DataSharingService) {
+  constructor(private formBuilder: FormBuilder) {
     const currentYear = new Date().getFullYear();
     this.minDate = new Date(currentYear - 18, 0, 1);
     this.maxDate = new Date(currentYear + 1, 11, 31);

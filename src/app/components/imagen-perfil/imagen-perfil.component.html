@@ -4,8 +4,7 @@
     </div>
     <div class="fotoCajaImagenPerfil">
         <div class="divFoto">
-            <img id="fotoPerfil" *ngIf="imagenBase64"  [src]="imagenBase64">
-            <img id="fotoPerfil" *ngIf="urlImagenActual" [src]="urlImagenActual">
+            <img id="fotoPerfil" *ngIf="imagenBase64" [src]="imagenBase64">
         </div>        
     </div>
     <div class="archivoFotoCajaImagenPerfil" *ngIf="!usuarioRegistrado">

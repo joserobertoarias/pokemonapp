@@ -13,11 +13,12 @@ export class CrearPerfilComponent implements OnInit {
 
   constructor(private usuarioService: UsuarioService, private router: Router){}
   ngOnInit(): void {
+
     this.usuarioService.removeData();
   }
 
   guardarPerfil(perfil: usuarioDTO):void {
-  
+
     this.usuarioService.crear(perfil);
      this.router.navigate(['/seleccionar']);
 
