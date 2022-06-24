@@ -1,1 +1,0 @@
-{"ast":null,"code":"export class Pokemon {\n  constructor(data, selected) {\n    this.data = data;\n    this.selected = selected;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}
