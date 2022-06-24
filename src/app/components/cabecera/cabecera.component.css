@@ -5,3 +5,14 @@
 #matToolbar {
     background-color: white;
 }
+
+.nav {
+    display: flex;
+}
+
+.lnkRegister {
+    display: flex;
+    font-size: 13px;
+    align-items: center;
+    margin-right: 15px;
+}

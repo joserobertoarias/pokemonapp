@@ -13,7 +13,8 @@ const routes: Routes = [
   {path: 'loading', component: LoadingPageComponent},
   {path: 'seleccionar', component: RegistroPokemonsComponent},
   {path: 'milista', component: MisPokemonesComponent},
-  {path: 'editar', component: EditarPerfilComponent}
+  {path: 'editar', component: EditarPerfilComponent},
+  {path: '**', redirectTo: '' }
 ]
 
 @NgModule({

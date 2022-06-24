@@ -1,3 +1,4 @@
+import { UsuarioService } from './../../services/usuario.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CabeceraComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(public usuarioService:UsuarioService) { }
 
   ngOnInit(): void {
+
+
   }
 
 }

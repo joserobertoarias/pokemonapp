@@ -26,6 +26,16 @@ export class UsuarioService {
   constructor() { }
 
 
+  estaRegistrado(){
+    const perfil = localStorage.getItem('perfil');
+    if (!perfil){
+      return false;
+    }
+
+    return true;
+
+  }
+
   public crear(usuario: usuarioDTO){
     this.removeData();
 
