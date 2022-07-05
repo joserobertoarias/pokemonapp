@@ -85,8 +85,10 @@ export class UsuarioService {
      return list;
    }
 
-
-
-
+   getperfil(): usuarioDTO{
+    const usuario = JSON.parse(localStorage.getItem('perfil'));
+    console.log(usuario.fotoBase64)
+    return usuario;
+   }
 
 }

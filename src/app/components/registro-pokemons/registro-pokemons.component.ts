@@ -24,7 +24,7 @@ export class RegistroPokemonsComponent implements OnInit {
   mostrarAviso: boolean = false;
   searchTerm = '';
 
-  constructor(private router: Router, private usuarioService: UsuarioService, private pokemonService: PokemonService) { }
+  constructor(private router: Router, public usuarioService: UsuarioService, private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
 

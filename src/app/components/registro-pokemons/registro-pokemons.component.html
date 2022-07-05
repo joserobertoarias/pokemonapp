@@ -6,8 +6,8 @@
     </div>
     <form>
         <div class="cajaPerfil">
-            <div class="imgPerfil">
-                <app-imagen-perfil [usuarioRegistrado]="usuario"  (archivoSeleccionado)="archivoSeleccionado($event)"></app-imagen-perfil>
+            <div class="imgPerfil">               
+                <app-imagen-perfil  [usuarioRegistrado]="usuarioService.getperfil()"  (archivoSeleccionado)="archivoSeleccionado($event)"></app-imagen-perfil>
             </div>
             <div class="infoPerfil">
                 <div>          
