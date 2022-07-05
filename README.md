@@ -11,8 +11,11 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Preview
 
-watch out a demo [Angular CLI Overview and Command Reference](https://joserobertoarias.github.io/pokemonapp/) page.
+Preview [demo page](https://joserobertoarias.github.io/pokemonapp/).
 
 ## ScreenShot
+
+![Screenshot](https://github.com/joserobertoarias/pokemonapp/blob/63e723d786024cf54f207630a0404b79a3bfe788/src/assets/Screenshot_1.jpg)
+
 
 ![]('')
